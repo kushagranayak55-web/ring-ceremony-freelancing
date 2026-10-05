@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahul & Aakriti | Ring Ceremony</title>
+<meta name="description" content="A beautiful invitation for the Ring Ceremony of Er. Rahul Dixit and Aakriti.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap');
+
+:root{
+  --cream:#fff8f0; --wine:#641b2b; --deep:#310d18; --gold:#c89545;
+  --rose:#e9b7ae; --muted:#765e5a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:var(--cream);color:var(--deep);overflow-x:hidden}
+section{position:relative;overflow:hidden}
+a{text-decoration:none;color:inherit}
+
+.reveal{opacity:0;transform:translateY(45px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.reveal.show{opacity:1;transform:none}
+
+.petals{position:absolute;inset:0;z-index:18;pointer-events:none;overflow:hidden}
+.petal{position:absolute;top:-12vh;left:0;width:var(--size);height:calc(var(--size) * 1.45);background:linear-gradient(145deg,#ffe1e6 0%,#f05b78 42%,#8f102b 100%);border-radius:80% 28% 72% 36%;opacity:var(--opacity);box-shadow:0 3px 12px rgba(132,17,44,.42),inset -2px -3px 5px rgba(112,0,26,.18);animation:fall var(--duration) linear var(--delay) infinite;transform-origin:50% 30%;will-change:transform}
+@keyframes fall{0%{transform:translate3d(var(--start-x),-14vh,0) rotate(var(--r0)) scale(.8)}25%{transform:translate3d(calc(var(--start-x) + var(--sway-a)),25vh,0) rotate(var(--r1)) scale(1)}50%{transform:translate3d(calc(var(--start-x) + var(--sway-b)),58vh,0) rotate(var(--r2)) scale(.94)}75%{transform:translate3d(calc(var(--start-x) + var(--sway-c)),86vh,0) rotate(var(--r3)) scale(1.05)}100%{transform:translate3d(calc(var(--start-x) + var(--drift)),116vh,0) rotate(var(--r4)) scale(.9)}}to{transform:translate3d(var(--drift),112vh,0) rotate(420deg)}}
+
+
+.hero{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  color:#fff;
+  isolation:isolate;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 50% 48%,rgba(111,20,38,.62) 0%,rgba(54,8,20,.78) 43%,rgba(13,2,7,.98) 100%),
+    linear-gradient(180deg,#24050f 0%,#3b0718 45%,#17030b 100%);
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:-8%;
+  z-index:-4;
+  background:
+    radial-gradient(circle at 15% 30%,rgba(236,159,91,.22) 0 2px,transparent 3px),
+    radial-gradient(circle at 85% 32%,rgba(255,209,139,.25) 0 3px,transparent 4px),
+    radial-gradient(circle at 25% 78%,rgba(255,177,119,.18) 0 3px,transparent 4px),
+    radial-gradient(circle at 74% 72%,rgba(255,210,143,.18) 0 4px,transparent 5px);
+  background-size:220px 210px,280px 240px,330px 300px,260px 260px;
+  filter:blur(.2px);
+  animation:bokeh 8s ease-in-out infinite alternate;
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-3;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(12,1,6,.82) 0%,rgba(35,4,14,.22) 28%,rgba(35,4,14,.05) 50%,rgba(35,4,14,.22) 72%,rgba(12,1,6,.82) 100%),
+    radial-gradient(ellipse at center,transparent 18%,rgba(8,1,5,.58) 92%);
+}
+@keyframes bokeh{from{transform:scale(1)}to{transform:scale(1.05) translateY(-5px)}}
+
+/* Cinematic side curtains */
+.curtain{
+  position:absolute;z-index:2;top:-5%;bottom:-5%;width:19%;pointer-events:none;
+  filter:drop-shadow(0 0 25px rgba(0,0,0,.55));
+}
+.curtain.left{left:-3%;transform:skewX(-5deg)}
+.curtain.right{right:-3%;transform:scaleX(-1) skewX(-5deg)}
+.curtain:before{
+  content:"";position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(90deg,
+      rgba(72,8,24,.95) 0 12px,
+      rgba(148,24,52,.72) 22px,
+      rgba(47,4,16,.98) 40px,
+      rgba(111,13,36,.78) 58px);
+  border-radius:0 0 50% 30%;
+  box-shadow:inset -22px 0 35px rgba(0,0,0,.5);
+}
+
+/* Gold floral arch made entirely in CSS; no static hero image required. */
+.rose-arch{
+  position:absolute;inset:0;z-index:7;pointer-events:none;
+}
+.rose-bloom{
+  position:absolute;width:clamp(54px,6vw,92px);height:clamp(54px,6vw,92px);
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 48%,#5e071e 0 10%,transparent 11%),
+    radial-gradient(ellipse at 30% 28%,#ff9bad 0 17%,#e73e68 31%,transparent 32%),
+    radial-gradient(ellipse at 70% 28%,#ff8fa2 0 17%,#c9194b 32%,transparent 33%),
+    radial-gradient(ellipse at 30% 72%,#ff6e8a 0 17%,#a90f39 33%,transparent 34%),
+    radial-gradient(ellipse at 70% 72%,#ff7894 0 17%,#b71140 33%,transparent 34%),
+    radial-gradient(ellipse at 50% 50%,#f04b70 0 34%,#9e1034 60%,#56051b 100%);
+  box-shadow:0 10px 28px rgba(0,0,0,.35),0 0 20px rgba(221,44,88,.18);
+  animation:roseFloat 6s ease-in-out infinite alternate;
+}
+.rose-bloom:after{
+  content:"";position:absolute;inset:13%;border-radius:50%;
+  border:2px solid rgba(255,207,176,.18);
+  transform:rotate(28deg);
+}
+@keyframes roseFloat{to{transform:translateY(-5px) rotate(2deg) scale(1.035)}}
+.arch-vine{
+  position:absolute;left:50%;top:-10%;width:78%;height:120%;
+  transform:translateX(-50%);
+  border:3px solid rgba(159,188,112,.72);
+  border-bottom:0;border-radius:50% 50% 0 0;
+  box-shadow:0 0 0 9px rgba(198,145,65,.08),0 0 30px rgba(0,0,0,.35);
+}
+.arch-vine:after{
+  content:"";position:absolute;inset:12px;border:2px solid rgba(208,157,78,.55);
+  border-bottom:0;border-radius:50% 50% 0 0;
+}
+.arch-leaf{
+  position:absolute;width:46px;height:20px;border-radius:100% 0 100% 0;
+  background:linear-gradient(135deg,#b4cf8e,#365c34);
+  box-shadow:0 3px 10px rgba(0,0,0,.25);
+  transform:rotate(var(--rot));
+}
+
+.nav{position:absolute;top:0;left:0;right:0;padding:24px 6%;display:flex;justify-content:space-between;align-items:center;z-index:40}
+.logo{font-family:'Great Vibes',cursive;font-size:30px;color:#f5d99b}
+.navlinks{display:flex;gap:28px;font-size:13px;letter-spacing:1px}
+.music{border:1px solid rgba(255,255,255,.5);padding:10px 16px;border-radius:30px;background:rgba(0,0,0,.2);color:#fff;cursor:pointer}
+.hero-content{position:relative;z-index:35;width:min(1180px,94vw);padding:120px 22px 55px;margin:auto;text-align:center}
+.eyebrow{letter-spacing:6px;text-transform:uppercase;font-size:clamp(11px,1.1vw,15px);color:#f6d79d;margin-bottom:18px;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(82px,10vw,156px);font-weight:500;line-height:.82;letter-spacing:2px;text-shadow:0 8px 35px rgba(0,0,0,.45)}
+.hero h1 span{display:block;font-family:'Great Vibes',cursive;font-size:.58em;color:#f4c78c;margin:12px 0 -2px;text-shadow:0 5px 25px rgba(229,161,85,.2)}
+.names{display:flex;justify-content:center;align-items:center;gap:clamp(28px,5vw,80px);margin:38px 0 32px}
+.name{font-family:'Great Vibes',cursive;font-size:clamp(48px,5.6vw,82px);color:#fff6f2;text-shadow:0 5px 25px rgba(0,0,0,.48)}
+.parent{font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.5vw,23px);line-height:1.35;color:#f3dfd6;text-shadow:0 3px 12px rgba(0,0,0,.45)}
+.rings{font-size:clamp(48px,5vw,76px);color:#f1bd68;animation:pulse 2s infinite;text-shadow:0 0 28px rgba(240,181,87,.55)}
+@keyframes pulse{50%{transform:scale(1.12);text-shadow:0 0 30px #d9a858}}
+.scroll{display:inline-block;margin-top:34px;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:#f3e4d9}
+.scroll:after{content:"↓";display:block;font-size:25px;margin-top:8px;animation:bounce 1.5s infinite}
+@keyframes bounce{50%{transform:translateY(8px)}}
+
+.countdown{background:#fff7ef;padding:75px 20px;text-align:center}
+.kicker{letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-size:12px}
+.title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,60px);font-weight:500;color:var(--wine);margin:10px 0}
+.timer{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:35px}
+.timebox{min-width:125px;padding:25px 18px;border:1px solid #d8b985;border-radius:4px;background:rgba(255,255,255,.55);box-shadow:0 12px 35px rgba(74,25,35,.08)}
+.timebox strong{display:block;font:600 48px 'Cormorant Garamond';color:var(--wine)}
+.timebox span{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+
+.invite{padding:110px 7%;background:linear-gradient(135deg,#fff9f1,#f7ddd5)}
+.invite-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.photo-frame{padding:12px;background:#fff;box-shadow:0 20px 60px rgba(73,20,30,.15);transform:rotate(-2deg)}
+.photo-stage{position:relative;aspect-ratio:4/5;overflow:hidden;background:radial-gradient(circle at 50% 35%,#f6d0cc,#c78280 62%,#6e2837);display:grid;place-items:center}.photo-stage img{width:100%;height:100%;display:block;aspect-ratio:4/5;object-fit:cover;background:#ead2cb}.photo-placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#fff4f1;background:linear-gradient(160deg,rgba(101,27,43,.1),rgba(49,13,24,.72));padding:25px;font:13px Inter}.ph-script{font:44px "Great Vibes";text-shadow:0 5px 25px rgba(0,0,0,.25)}.ph-script span{color:#ffd18a}.photo-stage img:not([style*="display: none"])+.photo-placeholder{display:none}
+.photo-note{text-align:center;font-size:12px;color:#8c6d67;padding:12px 0 2px}
+.copy{text-align:center}
+.script{font:46px 'Great Vibes';color:var(--wine)}
+.copy p{max-width:550px;margin:18px auto;line-height:1.9;color:#654e4a}
+.names-large{font:clamp(35px,5vw,58px) 'Cormorant Garamond';color:var(--wine);margin:20px 0}
+.names-large em{font-family:'Great Vibes';font-style:normal;color:var(--gold)}
+
+.details{background:var(--deep);color:#fff;padding:90px 7%;text-align:center}
+.details .title{color:#f1d59c}
+.cards{max-width:1000px;margin:45px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.2)}
+.card{padding:45px 25px;background:var(--deep)}
+.icon{font-size:32px;color:#e5bd75;margin-bottom:15px}
+.card h3{font:28px 'Cormorant Garamond';color:#f1d59c;margin-bottom:8px}
+.card p{color:#e7d8d5;line-height:1.7}
+
+.story{padding:110px 7%;background:#fff8f0;text-align:center}
+.story-box{max-width:800px;margin:30px auto;font:21px/1.9 'Cormorant Garamond';color:#654e4a}
+
+.actions{padding:90px 7%;background:linear-gradient(135deg,#f9e3dd,#fff8f0);text-align:center}
+.action-grid{max-width:1000px;margin:45px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.action{padding:35px 25px;border:1px solid #e3c4a9;background:rgba(255,255,255,.65);border-radius:12px}
+.action .icon{font-size:30px}.action h3{font:28px 'Cormorant Garamond';color:var(--wine)}
+.action p{font-size:13px;line-height:1.7;color:var(--muted);margin:10px 0 22px}
+button,.btn{border:0;border-radius:30px;padding:13px 22px;background:var(--wine);color:#fff;cursor:pointer;font:500 13px Inter;transition:.3s}
+button:hover,.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(100,27,43,.2)}
+
+.footer{padding:80px 20px;text-align:center;background:#250913;color:#fff}
+.footer .script{color:#eecb91;font-size:58px}.footer p{color:#cdb8b4;margin-top:10px}
+#toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,120px);background:#2d0b15;color:#fff;padding:15px 22px;border-radius:30px;z-index:20;transition:.4s;box-shadow:0 10px 30px #0004}
+#toast.show{transform:translate(-50%,0)}
+
+@media(max-width:750px){
+ .navlinks{display:none}.nav{padding:18px 20px}
+ .hero-content{padding:105px 14px 42px;width:96vw}
+ .hero h1{font-size:clamp(72px,20vw,112px)}
+ .names{gap:10px;margin-top:28px}.name{font-size:clamp(38px,11vw,58px)}
+ .parent{font-size:14px}.rings{font-size:40px}
+ .rose-bloom{width:52px;height:52px}.arch-vine{width:92%}
+ .curtain{width:24%}
+ .invite-grid{grid-template-columns:1fr;gap:45px}.copy{order:-1}
+ .cards,.action-grid{grid-template-columns:1fr}
+ .timebox{min-width:105px}.timebox strong{font-size:38px}
+}
+
+.hero-content .eyebrow:first-child{animation:heroIn .9s .15s both}
+.hero h1{animation:heroIn 1s .3s both}
+.hero .names{animation:heroIn 1s .5s both}
+.hero-content > .eyebrow:nth-of-type(2){animation:heroIn 1s .7s both}
+.hero .scroll{animation:heroIn 1s .9s both}
+@keyframes heroIn{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}
+
+/* ===== Dark premium hero theme ===== */
+.hero{
+  color:#f5ecdc;
+  background:
+    radial-gradient(ellipse 55% 45% at 50% 52%,rgba(200,149,69,.13) 0%,rgba(200,149,69,0) 70%),
+    radial-gradient(ellipse at 50% 50%,#1a0a12 0%,#0d050a 55%,#050204 100%) !important;
+}
+.hero:before{
+  background:
+    radial-gradient(circle at 15% 30%,rgba(230,190,120,.35) 0 1.5px,transparent 2.5px),
+    radial-gradient(circle at 85% 32%,rgba(230,190,120,.35) 0 2px,transparent 3px),
+    radial-gradient(circle at 25% 78%,rgba(230,190,120,.28) 0 2px,transparent 3px),
+    radial-gradient(circle at 74% 72%,rgba(230,190,120,.28) 0 2.5px,transparent 3.5px) !important;
+}
+.hero:after{
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.15) 28%,rgba(0,0,0,0) 50%,rgba(0,0,0,.15) 72%,rgba(0,0,0,.85) 100%),
+    radial-gradient(ellipse at center,transparent 30%,rgba(0,0,0,.65) 100%) !important;
+}
+/* richer, darker curtains */
+.curtain:before{
+  background:repeating-linear-gradient(90deg,rgba(40,4,14,.98) 0 12px,rgba(92,14,34,.8) 22px,rgba(24,2,8,1) 40px,rgba(66,8,24,.85) 58px) !important;
+}
+/* roses: deeper, slightly muted so they feel luxe rather than candy-pink */
+.rose-bloom{filter:saturate(.8) brightness(.72);box-shadow:0 10px 28px rgba(0,0,0,.6),0 0 22px rgba(200,149,69,.12)}
+.arch-vine{border-color:rgba(214,170,95,.55) !important}
+.arch-vine:after{border-color:rgba(214,170,95,.3) !important}
+.petal{filter:saturate(.8) brightness(.8)}
+
+/* nav */
+.logo{color:#e8c887;text-shadow:0 0 18px rgba(200,149,69,.35)}
+.navlinks a{color:#ead9b8;transition:.3s}
+.navlinks a:hover{color:#f6dca0}
+.music{color:#ead9b8;border:1px solid rgba(214,170,95,.55);background:rgba(0,0,0,.45)}
+.music:hover{background:rgba(214,170,95,.15)}
+
+/* typography */
+.eyebrow{color:#d9b46e;text-shadow:0 2px 14px rgba(0,0,0,.8)}
+.hero h1{
+  color:#faf1de;
+  text-shadow:0 6px 40px rgba(0,0,0,.8),0 0 60px rgba(200,149,69,.15);
+}
+.hero h1 span{
+  background:linear-gradient(180deg,#f8e2a8 0%,#d9a959 55%,#b27d32 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  text-shadow:none;filter:drop-shadow(0 4px 18px rgba(200,149,69,.3));
+  padding:0 .1em;
+}
+.name{color:#fbf3e6;text-shadow:0 4px 28px rgba(0,0,0,.85),0 0 40px rgba(200,149,69,.12)}
+.parent{color:#cdbb9f;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.parent strong{color:#ecd9b0;font-weight:700}
+.rings{color:#d9a959;text-shadow:0 0 28px rgba(217,169,89,.6)}
+.scroll{color:#d9c39a}
+
+/* Couple photo: show the full portrait (2:3) without cropping */
+.photo-frame{max-width:440px;margin:0 auto}
+.photo-stage{aspect-ratio:2/3}
+.photo-stage img{aspect-ratio:2/3;object-fit:cover;object-position:center}
+.photo-note{font:italic 22px 'Cormorant Garamond',serif;color:var(--wine);letter-spacing:1px;padding:14px 0 4px}
+
+/* Venue map */
+.map-wrap{max-width:1000px;margin:35px auto 0;border:1px solid rgba(241,213,156,.45);border-radius:6px;overflow:hidden;box-shadow:0 18px 45px rgba(0,0,0,.35)}
+.map-wrap iframe{display:block;width:100%;height:380px;border:0;filter:grayscale(.15) contrast(1.02)}
+.map-btn{display:inline-block;margin-top:26px;padding:14px 30px;border:1px solid #f1d59c;color:#f1d59c;text-decoration:none;letter-spacing:2px;text-transform:uppercase;font-size:13px;border-radius:40px;transition:.3s}
+.map-btn:hover{background:#f1d59c;color:var(--deep)}
+@media(max-width:700px){.map-wrap iframe{height:300px}}
+
+/* Entrance screen: one tap opens the invitation and starts the music */
+#gate{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;
+  background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(200,149,69,.16),rgba(200,149,69,0) 70%),radial-gradient(ellipse at center,#1a0a12 0%,#0d050a 60%,#050204 100%);
+  color:#f5ecdc;transition:opacity .9s ease,visibility .9s ease}
+#gate.out{opacity:0;visibility:hidden;pointer-events:none}
+#gate .g-logo{font:italic 64px 'Great Vibes','Cormorant Garamond',serif;color:#e8c887;text-shadow:0 0 28px rgba(200,149,69,.45)}
+#gate .g-small{margin-top:26px;font:12px Inter,sans-serif;letter-spacing:6px;text-transform:uppercase;color:#d9b46e}
+#gate .g-title{margin:14px 0 34px;font:400 44px/1.15 'Cormorant Garamond',Georgia,serif;color:#faf1de}
+#gate .g-title span{display:block;font-style:italic;color:#e8c887}
+#gate button{font:600 13px Inter,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#2a0f17;background:linear-gradient(180deg,#f8e2a8,#d9a959);border:0;border-radius:40px;padding:16px 38px;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.5),0 0 30px rgba(200,149,69,.3);animation:gatePulse 2.2s ease-in-out infinite}
+#gate button:hover{filter:brightness(1.08)}
+#gate .g-note{margin-top:18px;font:12px Inter,sans-serif;color:#b9a58a;letter-spacing:1px}
+@keyframes gatePulse{50%{transform:scale(1.045)}}
+body.gated{overflow:hidden}
+@media(max-width:600px){#gate .g-logo{font-size:52px}#gate .g-title{font-size:34px}}
+</style>
+</head>
+<body class="gated">
+<div id="gate" role="dialog" aria-label="Open invitation">
+ <div class="g-logo">R ♡ A</div>
+ <div class="g-small">You're invited to the</div>
+ <div class="g-title">Ring <span>Ceremony</span></div>
+ <button id="gateBtn" type="button">Open Invitation</button>
+ <div class="g-note">♫ Best experienced with sound</div>
+</div>
+
+<header class="hero" id="home">
+ <div class="petals" id="petals" aria-hidden="true"></div><div class="petal-glow" aria-hidden="true"></div>
+ <div class="curtain left"></div><div class="curtain right"></div>
+ <div class="rose-arch" aria-hidden="true">
+   <div class="arch-vine"></div>
+ </div>
+ <nav class="nav">
+  <div class="logo">R ♡ A</div>
+  <div class="navlinks">
+   <a href="#home">Home</a><a href="#story">Our Story</a><a href="#details">Details</a><a href="#reminder">Reminder</a>
+  </div>
+  <button class="music" id="musicBtn">♫ Play Music</button>
+ </nav>
+
+ <div class="hero-content">
+  <div class="eyebrow">You're Invited To The</div>
+  <h1>Ring <span>Ceremony</span></h1>
+  <div class="names">
+   <div><div class="name">Er. Rahul Dixit</div><div class="parent">Son of<br><strong>Dr. Pramod Dixit</strong></div></div>
+   <div class="rings">♡</div>
+   <div><div class="name">Aakriti</div><div class="parent">Daughter of<br><strong>Harishankar Dwivedi</strong></div></div>
+  </div>
+  <div class="eyebrow">Two Families · One Beautiful Beginning</div>
+  <a class="scroll" href="#story">Scroll Down</a>
+ </div>
+</header>
+
+<section class="invite" id="story">
+ <div class="invite-grid">
+  <div class="photo-frame reveal">
+   <div class="photo-stage"><img src="couple-photo.png" alt="Rahul and Aakriti" onerror="this.style.display='none'"> <div class="photo-placeholder"><div class="ph-script">Rahul <span>♡</span> Aakriti</div><div>Couple photograph will appear here</div></div></div>
+   <div class="photo-note">Rahul &amp; Aakriti</div>
+  </div>
+  <div class="copy reveal">
+   <div class="script">With Joyful Hearts</div>
+   <p>We cordially invite you to grace the auspicious occasion of the Ring Ceremony of</p>
+   <div class="names-large">Er. Rahul Dixit <em>&</em> Aakriti</div>
+   <p>Son of <strong>Dr. Pramod Dixit</strong><br>&<br>Daughter of <strong>Harishankar Dwivedi</strong></p>
+   <p>Your presence and blessings will make this special day even more memorable.</p>
+  </div>
+ </div>
+</section>
+
+<section class="countdown" id="countdown">
+ <div class="reveal">
+  <div class="kicker">Save The Date</div>
+  <h2 class="title">The Countdown Begins</h2>
+  <p>Until we celebrate their beautiful beginning</p>
+  <div class="timer">
+   <div class="timebox"><strong id="days">--</strong><span>Days</span></div>
+   <div class="timebox"><strong id="hours">--</strong><span>Hours</span></div>
+   <div class="timebox"><strong id="minutes">--</strong><span>Minutes</span></div>
+   <div class="timebox"><strong id="seconds">--</strong><span>Seconds</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="details" id="details">
+ <div class="reveal">
+  <div class="kicker">Join Us</div>
+  <h2 class="title">The Celebration</h2>
+  <div class="cards">
+   <div class="card"><div class="icon">♢</div><h3>Date</h3><p>17 October 2026<br>Saturday</p></div>
+   <div class="card"><div class="icon">◷</div><h3>Time</h3><p>12:00 PM<br>Onwards</p></div>
+   <div class="card"><div class="icon">⌖</div><h3>Venue</h3><p>Maa Jamuna Marriage Garden<br>Khargapur<br><a href="https://www.google.com/maps/search/?api=1&query=Maa+Jamuna+Marriage+Garden+Khargapur" target="_blank" rel="noopener" style="color:#f1d59c">View on Google Maps →</a></p></div>
+  </div>
+  <div class="map-wrap">
+   <iframe title="Map to Maa Jamuna Marriage Garden, Khargapur" src="https://www.google.com/maps?q=Maa+Jamuna+Marriage+Garden+Khargapur&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+  </div>
+  <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=Maa+Jamuna+Marriage+Garden+Khargapur" target="_blank" rel="noopener">📍 Get Directions on Google Maps</a>
+ </div>
+</section>
+
+<section class="story">
+ <div class="reveal">
+  <div class="kicker">A New Chapter</div>
+  <h2 class="title">Two Hearts, One Journey</h2>
+  <div class="story-box">Two families come together, two hearts begin a beautiful new chapter, and one day becomes a memory to cherish forever. We would be honoured to have you with us as Rahul and Aakriti exchange rings and celebrate this special beginning.</div>
+ </div>
+</section>
+
+<section class="actions" id="reminder">
+ <div class="reveal">
+  <div class="kicker">Don't Miss The Moment</div>
+  <h2 class="title">Celebrate With Us</h2>
+  <div class="action-grid">
+   <div class="action"><div class="icon">♧</div><h3>Reminder</h3><p>Allow browser notifications and receive a reminder on the ceremony day.</p><button onclick="notifyMe()">🔔 Notify Me</button></div>
+   <div class="action"><div class="icon">▣</div><h3>Calendar</h3><p>Save the ceremony to your calendar so you never miss this special day.</p><button onclick="addCalendar()">＋ Add to Calendar</button></div>
+   <div class="action"><div class="icon">♡</div><h3>RSVP</h3><p>Let the family know that you'll be joining the celebration.</p><button onclick="toast('RSVP feature will be connected to the backend.')">Confirm Presence</button></div>
+  </div>
+ </div>
+</section>
+
+<footer class="footer">
+ <div class="script">Rahul & Aakriti</div>
+ <p>17 October 2026 · 12:00 PM · Maa Jamuna Marriage Garden, Khargapur</p>
+ <p style="margin-top:25px;font-size:12px;opacity:.65">With love, blessings & happiness</p>
+</footer>
+
+<audio id="bgm" src="music.mp3" loop preload="auto" autoplay></audio>
+<div id="toast"></div>
+
+<script>
+// Ceremony target: 17 October 2026, 12:00 PM IST.
+const target = new Date("2026-10-17T12:00:00+05:30").getTime();
+
+function updateCountdown(){
+ const diff = target - Date.now();
+ if(diff <= 0){
+  ["days","hours","minutes","seconds"].forEach(id=>document.getElementById(id).textContent="00");
+  document.querySelector(".countdown p").textContent="Today is the Ring Ceremony! 💍";
+  return;
+ }
+ const d=Math.floor(diff/86400000);
+ const h=Math.floor(diff/3600000)%24;
+ const m=Math.floor(diff/60000)%60;
+ const s=Math.floor(diff/1000)%60;
+ document.getElementById("days").textContent=String(d).padStart(2,"0");
+ document.getElementById("hours").textContent=String(h).padStart(2,"0");
+ document.getElementById("minutes").textContent=String(m).padStart(2,"0");
+ document.getElementById("seconds").textContent=String(s).padStart(2,"0");
+}
+updateCountdown(); setInterval(updateCountdown,1000);
+
+// Scroll reveal animations.
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")});
+},{threshold:.14});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+// Floating rose petals — intentionally more visible on the opening screen.
+const petals = document.getElementById("petals");
+for(let i=0;i<42;i++){
+  const p = document.createElement("span");
+  p.className = "petal";
+
+  const size = 10 + Math.random() * 18;
+  p.style.setProperty("--size", size + "px");
+  p.style.setProperty("--opacity", (0.52 + Math.random() * 0.38).toFixed(2));
+  p.style.setProperty("--duration", (6.5 + Math.random() * 7.5).toFixed(2) + "s");
+  p.style.setProperty("--delay", (-Math.random() * 13).toFixed(2) + "s");
+
+  p.style.setProperty("--start-x", (Math.random() * 108 - 4) + "vw");
+  p.style.setProperty("--drift", (Math.random() * 220 - 110) + "px");
+  p.style.setProperty("--sway-a", (Math.random() * 120 - 60) + "px");
+  p.style.setProperty("--sway-b", (Math.random() * 170 - 85) + "px");
+  p.style.setProperty("--sway-c", (Math.random() * 130 - 65) + "px");
+
+  p.style.setProperty("--r0", (Math.random() * 80 - 40) + "deg");
+  p.style.setProperty("--r1", (Math.random() * 260 - 130) + "deg");
+  p.style.setProperty("--r2", (Math.random() * 420 - 210) + "deg");
+  p.style.setProperty("--r3", (Math.random() * 520 - 260) + "deg");
+  p.style.setProperty("--r4", (Math.random() * 720 - 360) + "deg");
+
+  p.style.background = Math.random() > .45
+    ? "linear-gradient(145deg,#ffe7eb 0%,#f45b7d 44%,#980f30 100%)"
+    : "linear-gradient(145deg,#ffd5da 0%,#d82f58 48%,#700d25 100%)";
+
+  petals.appendChild(p);
+}
+
+// Notification permission demo. Real push requires a backend + service worker.
+async function notifyMe(){
+ if(!("Notification" in window)){toast("Notifications are not supported in this browser.");return}
+ const permission=await Notification.requestPermission();
+ if(permission==="granted"){
+   toast("Reminder permission enabled. Backend push will be connected next.");
+ }else{
+   toast("Notification permission was not enabled.");
+ }
+}
+
+function addCalendar(){
+ const start="20261017T063000Z"; // 12:00 PM IST
+ const end="20261017T093000Z";   // 3:00 PM IST
+ const url=`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("Ring Ceremony — Rahul & Aakriti")}&dates=${start}/${end}&details=${encodeURIComponent("Ring Ceremony of Er. Rahul Dixit and Aakriti")}&location=${encodeURIComponent("Maa Jamuna Marriage Garden, Khargapur")}`;
+ window.open(url,"_blank");
+}
+
+function toast(message){
+ const t=document.getElementById("toast"); t.textContent=message; t.classList.add("show");
+ setTimeout(()=>t.classList.remove("show"),3500);
+}
+
+// Background music: "Chand Baliyan" (place the file as music.mp3 next to index.html)
+const bgm = document.getElementById("bgm");
+const musicBtn = document.getElementById("musicBtn");
+bgm.volume = 0.7;
+function setMusicLabel(){ musicBtn.textContent = bgm.paused ? "♫ Play Music" : "❚❚ Pause Music"; }
+function startMusic(){ return bgm.play().then(setMusicLabel).catch(()=>false); }
+
+// 1) Try to autoplay the moment the page loads.
+window.addEventListener("load", ()=>{ startMusic(); });
+
+// 2) Browsers block sound until the visitor interacts, so if autoplay was blocked,
+//    start it on the very first tap / click / scroll / key press.
+const unlockEvents = ["pointerdown","touchstart","keydown","wheel","scroll"];
+function unlockAudio(e){
+  if(e && e.target && e.target.id === "musicBtn") return; // button handles itself
+  startMusic().then(ok=>{ if(ok !== false) unlockEvents.forEach(ev=>window.removeEventListener(ev, unlockAudio)); });
+}
+unlockEvents.forEach(ev=>window.addEventListener(ev, unlockAudio, {passive:true}));
+
+// 3) Manual play / pause button.
+musicBtn.addEventListener("click", ()=>{
+  if(bgm.paused){ bgm.play().then(setMusicLabel).catch(()=>toast("Add music.mp3 to the folder to enable music.")); }
+  else { bgm.pause(); setMusicLabel(); }
+});
+bgm.addEventListener("error", ()=>{ musicBtn.textContent = "♫ Music unavailable"; });
+
+// Entrance screen: try autoplay first; if the browser allows it the screen disappears by itself,
+// otherwise one tap on "Open Invitation" opens the page and starts the music.
+(function(){
+ const gate=document.getElementById("gate");
+ function openGate(){ gate.classList.add("out"); document.body.classList.remove("gated"); setTimeout(()=>gate.remove(),1000); }
+ document.getElementById("gateBtn").addEventListener("click",()=>{ startMusic(); openGate(); });
+ bgm.play().then(()=>{ setMusicLabel(); openGate(); }).catch(()=>{});
+})();
+
+</script>
+</body>
+</html>
